@@ -18,10 +18,10 @@ class Chess {
 
         const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
         let style = (rowNum % 2 === 0) ? '' : 'black';
-        
-        for ( let i = 0; i < chars.length; i++) {
+
+        chars.forEach((value, index) => {
             const field = document.createElement("div");
-            const rowId = chars[i] + '_' + rowNum;
+            const rowId = chars[index] + '_' + rowNum;
             field.setAttribute('data-row-id', rowId);
             this.setFieldCss(field, style);
             if (rowNum < 2 || rowNum > 5) {
@@ -29,7 +29,7 @@ class Chess {
             }
             this.tempate.appendChild(field);
             style = (style === 'black') ? '' : 'black';
-        }
+        });
     }
 
     renderItem(field, rowId, rowNum) {
@@ -50,6 +50,7 @@ class Chess {
     }
 
     getItemName(rowId, rowNum) {
+        
         const itemNames = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
         const idObj = rowId.split('_');
         let id = idObj[0];
