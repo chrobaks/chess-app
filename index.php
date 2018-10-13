@@ -7,7 +7,7 @@
  * -----------------------------------------------------------------------------
  * # include controller
  */
-include_once 'controller/Home.Controller.php';
+include_once 'app/controller/Home.Controller.php';
 /** 
 * # get instance
 */
@@ -19,4 +19,4 @@ $view = $controller->getView();
 /** 
 * # set view
 */
-include_once 'view/main.tpl.php';
+include_once 'app/view/main.tpl.php';
