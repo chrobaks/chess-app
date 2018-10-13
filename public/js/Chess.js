@@ -50,25 +50,36 @@ class Chess {
     }
 
     getItemName(rowId, rowNum) {
-        
+
         const itemNames = ['Pawn', 'Rook', 'Knight', 'Bishop', 'Queen', 'King'];
         const idObj = rowId.split('_');
-        let id = idObj[0];
+
         let name = itemNames[0];
-        
+
         if (rowNum === 0 || rowNum === 7) {
-            if (id === 'a' || id === 'h') {
-                name = itemNames[1];
-            } else if (id === 'b' || id === 'g') {
-                name = itemNames[2];
-            } else if (id === 'c' || id === 'f') {
-                name = itemNames[3];
-            } else if (id === 'd') {
-                name = itemNames[4];
-            } else if (id === 'e') {
-                name = itemNames[5];
+
+            switch(idObj[0]) {
+                case 'a':
+                case 'h':
+                    name = itemNames[1];
+                    break;
+                case 'b':
+                case 'g':
+                    name = itemNames[2];
+                    break;
+                case 'c':
+                case 'f':
+                    name = itemNames[3];
+                    break;
+                case 'd':
+                    name = itemNames[4];
+                    break;
+                case 'e':
+                    name = itemNames[5];
+                    break;
             }
         }
+        
         return name;
     }
 }
