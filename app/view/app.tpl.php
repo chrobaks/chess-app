@@ -7,3 +7,7 @@
         }
     });
 </script>
+<?php if($view->test === '1'): ?>
+    <script type="text/javascript" src="public/js/ChessStepValidator.js"></script>
+    <script type="text/javascript" src="public/js/Chess.test.js"></script>
+<?php endif;
